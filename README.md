@@ -1,6 +1,6 @@
 # databricks-flyway-demo
 
-`
+```bash
 .
 ├── README.md
 ├── flyway
@@ -12,4 +12,4 @@
 │       ├── V003_1725742392__create_silver_tables.sql
 │       └── V004_1725753080__add_pk_silver_tables.sql
 └── transformations
-`
+```
