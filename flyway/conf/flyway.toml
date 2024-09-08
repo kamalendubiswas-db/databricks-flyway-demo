@@ -1,0 +1,24 @@
+databaseType = "Databricks"
+name = "databricks-flyway-demo"
+
+[environments.dev]
+url = "<jdbc-url>;ConnCatalog=<default-catalog>;EnableArrow=0;"
+user = "token"
+password = "<token>"
+schemas = [ "bronze", "silver", "gold" ]
+
+[flyway]
+environment="dev" 
+locations = [ "<path>/migrations" ]
+mixed = true
+outOfOrder = true
+schemaModelLocation = "schema-model"
+validateMigrationNaming = true
+defaultSchema = "default"
+baselineOnMigrate = true
+
+[flyway.check]
+majorTolerance = 0
+
+[redgateCompare]
+filterFile = "filter.rgf"
