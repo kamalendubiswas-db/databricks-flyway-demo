@@ -14,9 +14,7 @@ jobs:
         with:
           args: >-
             migrate
-            -workingDirectory="/github/workspace/"
-            -url="${{ secrets.FLYWAY_URL }}"
-            -user="${{ secrets.FLYWAY_USER }}"
-            -password="${{ secrets.FLYWAY_PASSWORD }}"
-        env:
-          FLYWAY_LICENSE_KEY: ${{ secrets.FLYWAY_LICENSE_KEY }}
+            -url="${{ secrets.DATABRICKS_JDBC_URL }}"
+            -user="${{ secrets.DATABRICKS_USER }}"
+            -password="${{ secrets.DATABRICKS_TOKEN }}"
+            -location= filesystem:./flyway/migrations
