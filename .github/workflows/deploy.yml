@@ -17,4 +17,3 @@ jobs:
             -url="${{ secrets.DATABRICKS_JDBC_URL }}"
             -user="${{ secrets.DATABRICKS_USER }}"
             -password="${{ secrets.DATABRICKS_TOKEN }}"
-            -location= filesystem:./flyway/migrations
