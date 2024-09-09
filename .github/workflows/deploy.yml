@@ -14,7 +14,7 @@ jobs:
         with:
           args: >-
             migrate
-            -workingDirectory="/github/workspace/flyway"
+            -workingDirectory="/github/workspace/"
             -url="${{ secrets.DATABRICKS_JDBC_URL }}"
             -user="${{ secrets.DATABRICKS_USER }}"
             -password="${{ secrets.DATABRICKS_TOKEN }}"
