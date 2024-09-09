@@ -1,0 +1,22 @@
+name: 'Flyway Migrate'
+ 
+on:
+  push:
+    branches:
+      - main
+ 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Flyway Migrate
+        uses: docker://redgate/flyway:10
+        with:
+          args: >-
+            migrate
+            -workingDirectory="/github/workspace/"
+            -url="${{ secrets.FLYWAY_URL }}"
+            -user="${{ secrets.FLYWAY_USER }}"
+            -password="${{ secrets.FLYWAY_PASSWORD }}"
+        env:
+          FLYWAY_LICENSE_KEY: ${{ secrets.FLYWAY_LICENSE_KEY }}
