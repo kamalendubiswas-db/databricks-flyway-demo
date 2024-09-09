@@ -9,12 +9,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Run Flyway Migrate
-        uses: docker://redgate/flyway:10
-        with:
-          args: >-
-            migrate
-            -workingDirectory="/github/workspace/"
-            -url="${{ secrets.DATABRICKS_JDBC_URL }}"
-            -user="${{ secrets.DATABRICKS_USER }}"
-            -password="${{ secrets.DATABRICKS_TOKEN }}"
+        - uses: red-gate/FlywayGitHubAction@main
+          with:
+            url: "${{ secrets.DATABRICKS_JDBC_URL }}"
+            user: "${{ secrets.DATABRICKS_USER }}"
+            password: "${{ secrets.DATABRICKS_TOKEN }}"
+            locations: filesystem:./flyway/sql
