@@ -4,11 +4,14 @@ on:
   push:
     branches:
       - main
- 
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+        - run: echo "$GITHUB_WORKSPACE"
+        - run: ls -l "$GITHUB_WORKSPACE"
+
         - uses: red-gate/FlywayGitHubAction@main
           with:
             url: "${{ secrets.DATABRICKS_JDBC_URL }}"
