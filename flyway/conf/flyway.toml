@@ -9,12 +9,12 @@ schemas = [ "bronze", "silver", "gold" ]
 
 [flyway]
 environment="dev" 
-locations = [ "<path>/migrations" ]
+locations = [ "filesystem:./flyway/sql" ]
 mixed = true
 outOfOrder = true
 schemaModelLocation = "schema-model"
 validateMigrationNaming = true
-defaultSchema = "default"
+defaultSchema = "<flyway_default_schema>"
 baselineOnMigrate = true
 
 [flyway.check]
