@@ -21,8 +21,8 @@ The blog post covers the following topics:
 
 ## Resources
 
-[Flyway Documentation](https://documentation.red-gate.com/flyway)
-[Databricks Documentation](https://docs.databricks.com/en/index.html)
+- [Flyway Documentation](https://documentation.red-gate.com/flyway)
+- [Databricks Documentation](https://docs.databricks.com/en/index.html)
 
 
 ## Project Overview
