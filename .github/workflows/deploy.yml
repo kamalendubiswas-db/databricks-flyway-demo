@@ -9,13 +9,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-        - run: echo "$GITHUB_WORKSPACE"
       
         - uses: actions/checkout@v4
           with:
             ref: main
         
-        - run: ls -l "$GITHUB_WORKSPACE"
 
         - uses: red-gate/FlywayGitHubAction@main
           with:
